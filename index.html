@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="两个适合孩子玩的数字小游戏：数字变身队和数字近路大赛。" />
+    <title>数字游戏乐园</title>
+    <style>
+      * { box-sizing: border-box; }
+      body {
+        min-height: 100vh;
+        margin: 0;
+        padding: 40px 18px;
+        color: #17253f;
+        font-family: "Arial Rounded MT Bold", "PingFang SC", "Microsoft YaHei", sans-serif;
+        background: linear-gradient(145deg, #dff7ff, #f1edff 55%, #fff5d5);
+      }
+      main { width: min(850px, 100%); margin: 0 auto; }
+      header { margin-bottom: 28px; text-align: center; }
+      .mark {
+        display: grid;
+        width: 72px;
+        height: 62px;
+        margin: 0 auto 20px;
+        place-items: center;
+        transform: rotate(-4deg);
+        border: 4px solid #17253f;
+        border-radius: 20px;
+        background: #ffd84d;
+        box-shadow: 6px 7px 0 #17253f;
+        font-size: 24px;
+        font-weight: 900;
+      }
+      h1 { margin: 0; font-size: clamp(36px, 7vw, 64px); letter-spacing: -.05em; }
+      header p { color: #64718a; font-weight: 700; }
+      .games { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+      .game {
+        display: flex;
+        min-height: 270px;
+        flex-direction: column;
+        padding: 28px;
+        border: 4px solid #17253f;
+        border-radius: 28px;
+        color: #17253f;
+        text-decoration: none;
+        box-shadow: 8px 9px 0 #17253f;
+        transition: transform .15s, box-shadow .15s;
+      }
+      .game:hover { transform: translateY(-5px); box-shadow: 10px 14px 0 #17253f; }
+      .game:first-child { background: #fff7bd; }
+      .game:last-child { background: #c9f4e6; }
+      .number { font: 900 76px/.9 Arial, sans-serif; }
+      h2 { margin: 22px 0 8px; font-size: 27px; }
+      .game p { margin: 0 0 24px; color: #526078; font-weight: 700; line-height: 1.6; }
+      .play { margin-top: auto; font-size: 17px; font-weight: 900; }
+      footer { margin-top: 30px; color: #738097; font-size: 12px; text-align: center; }
+      @media (max-width: 650px) {
+        body { padding-top: 28px; }
+        .games { grid-template-columns: 1fr; }
+        .game { min-height: 230px; }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <span class="mark">0→9</span>
+        <h1>数字游戏乐园</h1>
+        <p>选一个游戏，马上开始数字冒险！</p>
+      </header>
+      <section class="games">
+        <a class="game" href="./classic/">
+          <span class="number">3</span>
+          <h2>数字变身队·经典版</h2>
+          <p>选择普通数字或数字方块，变成正确的数字，完成六关冒险。</p>
+          <span class="play">开始变身 →</span>
+        </a>
+        <a class="game" href="./race/">
+          <span class="number">5!</span>
+          <h2>数字近路大赛</h2>
+          <p>在奔跑的数字中找到目标，让它拐上近路并冲向终点。</p>
+          <span class="play">开始赛跑 →</span>
+        </a>
+      </section>
+      <footer>无需账号 · 手机和电脑浏览器均可游玩</footer>
+    </main>
+  </body>
+</html>
