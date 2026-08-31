@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="description" content="先帮数字爬到同号台阶，再驾驶越来越大的数字小车抵达终点。" />
+    <title>数字阶梯小车赛</title>
+    <link rel="stylesheet" href="./game.css" />
+    <script src="./game.js" defer></script>
+  </head>
+  <body>
+    <main class="game-shell" id="game-shell">
+      <nav class="topbar" aria-label="游戏导航">
+        <a class="brand" href="../" aria-label="返回数字游戏乐园">
+          <span class="brand-mark" aria-hidden="true">1→9</span>
+          <span>数字阶梯小车赛</span>
+        </a>
+        <button class="sound-button" id="sound-button" type="button" aria-pressed="true">
+          <span aria-hidden="true">♪</span>
+          <span id="sound-label">声音开</span>
+        </button>
+      </nav>
+
+      <section class="game-card" aria-labelledby="game-title">
+        <header class="game-header">
+          <div>
+            <h1 id="game-title">认准数字，再出发</h1>
+          </div>
+          <ol class="level-progress" aria-label="关卡进度">
+            <li class="level-dot is-current" id="level-dot-1" aria-current="step"><span>1</span>数字阶梯</li>
+            <li class="level-dot" id="level-dot-2"><span>2</span>数字小车</li>
+          </ol>
+        </header>
+
+        <p class="message" id="message" role="status" aria-live="polite">先看看你是几，再点同号台阶。</p>
+
+        <section class="level-panel" id="level-one" aria-labelledby="level-one-title">
+          <div class="mission-row">
+            <div>
+              <p class="level-label">第一关</p>
+              <h2 id="level-one-title">数字阶梯</h2>
+              <p>你只能停在和自己数字相同的台阶上。</p>
+            </div>
+            <div class="player-number" aria-label="你的数字"><span>你是</span><strong id="stair-target">6</strong></div>
+          </div>
+
+          <div class="stair-scroll" id="stair-scroll" tabindex="0" aria-label="左右滑动查看一到九号台阶">
+            <div class="staircase" id="staircase">
+              <div class="climber" id="climber" aria-hidden="true"><span class="climber-face"></span><b id="climber-number">6</b></div>
+              <button class="stair" type="button" data-step="1" style="--step: 1"><span>1</span></button>
+              <button class="stair" type="button" data-step="2" style="--step: 2"><span>2</span></button>
+              <button class="stair" type="button" data-step="3" style="--step: 3"><span>3</span></button>
+              <button class="stair" type="button" data-step="4" style="--step: 4"><span>4</span></button>
+              <button class="stair" type="button" data-step="5" style="--step: 5"><span>5</span></button>
+              <button class="stair" type="button" data-step="6" style="--step: 6"><span>6</span></button>
+              <button class="stair" type="button" data-step="7" style="--step: 7"><span>7</span></button>
+              <button class="stair" type="button" data-step="8" style="--step: 8"><span>8</span></button>
+              <button class="stair" type="button" data-step="9" style="--step: 9"><span>9</span></button>
+            </div>
+          </div>
+          <p class="scroll-hint">可以左右滑动查看全部台阶</p>
+          <button class="primary-button next-button" id="next-level" type="button" hidden>进入第二关 <span aria-hidden="true">→</span></button>
+        </section>
+
+        <section class="level-panel" id="level-two" aria-labelledby="level-two-title" hidden>
+          <div class="mission-row">
+            <div>
+              <p class="level-label">第二关</p>
+              <h2 id="level-two-title">数字小车</h2>
+              <p>每次都要选比你现在更大的数字。选小了，就回起点。</p>
+            </div>
+            <div class="player-number player-number-cyan" aria-label="你现在的数字"><span>现在是</span><strong id="car-target">4</strong></div>
+          </div>
+
+          <div class="road-wrap">
+            <div class="road" aria-label="小车赛道，三次正确选择后到达终点">
+              <span class="road-label road-start">起点</span>
+              <span class="road-mark mark-one" aria-hidden="true"></span>
+              <span class="road-mark mark-two" aria-hidden="true"></span>
+              <span class="finish-flag" aria-label="终点"><i></i>终点</span>
+              <div class="road-runner" id="road-runner" style="--road-progress: 0" aria-hidden="true"><span></span><b id="runner-number">4</b></div>
+            </div>
+          </div>
+
+          <div class="choice-zone">
+            <p id="choice-prompt">哪辆小车的数字比 <strong>4</strong> 大？</p>
+            <div class="car-choices" id="car-choices"></div>
+          </div>
+        </section>
+      </section>
+
+      <footer class="park-footer" aria-label="游戏提示">
+        <div class="footer-track" aria-hidden="true">
+          <span>看清数字 · 爬对阶梯 · 越开越大 ·</span><span>看清数字 · 爬对阶梯 · 越开越大 ·</span>
+        </div>
+      </footer>
+    </main>
+
+    <dialog class="result-dialog" id="result-dialog" aria-labelledby="result-title">
+      <div class="result-badge" aria-hidden="true">✓</div>
+      <p class="level-label">两关完成</p>
+      <h2 id="result-title">你到达终点啦！</h2>
+      <p>你认出了同号台阶，也让数字小车越开越大。</p>
+      <div class="result-actions">
+        <button class="primary-button" id="play-again" type="button">再玩一次</button>
+        <a class="secondary-button" href="../">返回乐园</a>
+      </div>
+    </dialog>
+  </body>
+</html>

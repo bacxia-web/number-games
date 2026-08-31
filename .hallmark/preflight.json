@@ -1,0 +1,9 @@
+{
+  "date": "2026-08-31",
+  "framework": "vanilla HTML/CSS/JavaScript",
+  "font_stack": "Arial Rounded MT Bold, PingFang SC, Microsoft YaHei",
+  "palette": "deep blue ink, yellow, mint, coral, sky",
+  "motion": "no external motion library",
+  "spacing": "approximately 4px scale",
+  "preserved": ["font stack", "palette", "rounded toy-like surfaces", "static deployment"]
+}

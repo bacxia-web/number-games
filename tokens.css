@@ -1,0 +1,65 @@
+:root {
+  --color-paper: oklch(97% 0.012 95);
+  --color-paper-2: oklch(94% 0.016 95);
+  --color-paper-3: oklch(91% 0.02 95);
+  --color-ink: oklch(25% 0.045 255);
+  --color-ink-soft: oklch(38% 0.04 255);
+  --color-muted: oklch(40% 0.035 255);
+  --color-rule: oklch(25% 0.045 255 / 0.16);
+  --color-accent: oklch(86% 0.18 95);
+  --color-accent-deep: oklch(66% 0.15 86);
+  --color-accent-ink: oklch(23% 0.04 255);
+  --color-cyan: oklch(82% 0.12 220);
+  --color-cyan-deep: oklch(58% 0.14 232);
+  --color-coral: oklch(72% 0.19 25);
+  --color-coral-deep: oklch(52% 0.19 25);
+  --color-mint: oklch(82% 0.13 155);
+  --color-mint-deep: oklch(49% 0.12 160);
+  --color-lavender: oklch(84% 0.09 300);
+  --color-sky: oklch(93% 0.055 215);
+  --color-grass: oklch(83% 0.12 145);
+  --color-road: oklch(74% 0.03 250);
+  --color-road-mark: oklch(97% 0.012 95);
+  --color-success: oklch(46% 0.13 155);
+  --color-success-bg: oklch(93% 0.05 155);
+  --color-error: oklch(47% 0.19 25);
+  --color-error-bg: oklch(93% 0.06 25);
+  --color-focus: oklch(48% 0.19 260);
+  --color-overlay: oklch(20% 0.04 255 / 0.68);
+  --color-shadow-soft: oklch(25% 0.045 255 / 0.14);
+  --color-shadow-cast: oklch(66% 0.15 86 / 0.38);
+
+  --font-display: "Arial Rounded MT Bold", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-body: "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+  --font-number: Arial, "PingFang SC", sans-serif;
+
+  --space-2xs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-md: 1rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.75rem;
+  --text-display: clamp(2rem, 7vw, 3.75rem);
+  --text-number: clamp(3rem, 12vw, 6rem);
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in: cubic-bezier(0.55, 0, 1, 0.45);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 90ms;
+  --dur-base: 180ms;
+  --dur-move: 560ms;
+
+  --radius-sm: 0.75rem;
+  --radius-md: 1rem;
+  --radius-card: 1.75rem;
+  --radius-pill: 999px;
+  --rule-thick: 0.25rem;
+  --shadow-card: 0 1.25rem 3rem -1.5rem var(--color-shadow-soft);
+}
