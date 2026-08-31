@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="两个适合孩子玩的数字小游戏：数字变身队和数字近路大赛。" />
+    <meta name="description" content="三个适合孩子玩的数字小游戏：数字变身队、数字近路大赛和数字双人寻宝赛。" />
     <title>数字游戏乐园</title>
     <style>
       * { box-sizing: border-box; }
@@ -33,7 +33,7 @@
       }
       h1 { margin: 0; font-size: clamp(36px, 7vw, 64px); letter-spacing: -.05em; }
       header p { color: #64718a; font-weight: 700; }
-      .games { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+      .games { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 22px; }
       .game {
         display: flex;
         min-height: 270px;
@@ -48,7 +48,8 @@
       }
       .game:hover { transform: translateY(-5px); box-shadow: 10px 14px 0 #17253f; }
       .game:first-child { background: #fff7bd; }
-      .game:last-child { background: #c9f4e6; }
+      .game:nth-child(2) { background: #c9f4e6; }
+      .game:nth-child(3) { background: #e7dcff; }
       .number { font: 900 76px/.9 Arial, sans-serif; }
       h2 { margin: 22px 0 8px; font-size: 27px; }
       .game p { margin: 0 0 24px; color: #526078; font-weight: 700; line-height: 1.6; }
@@ -76,6 +77,12 @@
           <span class="play">开始变身 →</span>
         </a>
         <a class="game" href="./race/">
+          <span class="number">5!</span>
+          <h2>数字近路大赛</h2>
+          <p>在奔跑的数字中找到目标，点中它，让它抄近路冲向终点。</p>
+          <span class="play">开始赛跑 →</span>
+        </a>
+        <a class="game" href="./team-race/">
           <span class="number">2×</span>
           <h2>数字双人寻宝赛</h2>
           <p>两个数字组成一队，越快到达终点，赢得的宝箱奖励越好。</p>
